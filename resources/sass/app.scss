@@ -1,0 +1,339 @@
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Bootstrap Icons
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// ===== CSS web statis (dari praktikum minggu lalu) =====
+:root {
+  --bg: #eef2f1;
+  --ink: #14232b;
+  --muted: #4d6169;
+  --line: #c5d2d0;
+  --accent: #0f766e;
+  --deep: #12303a;
+  --soft: #dfe9e7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Cambria, Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header and navigation */
+header {
+  background: var(--deep);
+  color: #eef6f4;
+}
+
+header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.brand {
+  font-family: Cambria, Georgia, serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #eef6f4;
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: #eef6f4;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+nav a {
+  color: #cfe3df;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+nav a[aria-current="page"] {
+  background: #5fd0c0;
+  color: var(--deep);
+  font-weight: 600;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  padding: 56px 0 72px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid var(--deep);
+  display: block;
+}
+
+.hero p.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.nim {
+  display: inline-block;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+/* Dinamai .tombol (bukan .btn) agar tidak bentrok dengan class .btn milik Bootstrap */
+.tombol {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--accent);
+  color: #fff;
+}
+
+.tombol.alt {
+  background: transparent;
+  color: var(--deep);
+  border: 2px solid var(--deep);
+}
+
+.tombol:hover {
+  filter: brightness(1.1);
+  color: #fff;
+}
+
+.tombol.alt:hover {
+  color: var(--deep);
+}
+
+section {
+  margin-top: 56px;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.panel {
+  border-top: 3px solid var(--deep);
+  padding-top: 14px;
+}
+
+.panel ul {
+  padding-left: 1.1em;
+  margin: 0.4em 0;
+}
+
+.timeline {
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+  margin: 0;
+}
+
+.timeline li {
+  list-style: none;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -29px;
+  top: 8px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--accent);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0.6em 0;
+}
+
+.tags li {
+  list-style: none;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  padding: 3px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.project:last-of-type {
+  border-bottom: 1px solid var(--line);
+}
+
+.project .meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.stack {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+dl.contact {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px 20px;
+}
+
+dl.contact dt {
+  font-weight: 600;
+}
+
+dl.contact dd {
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  background: var(--deep);
+  color: #cfe3df;
+  padding: 24px 0;
+  font-size: 0.92rem;
+}
+
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+footer p {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .hero,
+  .project {
+    grid-template-columns: 1fr;
+  }
+
+  .hero img {
+    width: 140px;
+    height: 140px;
+  }
+
+  dl.contact {
+    grid-template-columns: 1fr;
+  }
+
+  footer .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
